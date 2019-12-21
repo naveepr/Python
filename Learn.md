@@ -322,6 +322,7 @@ TypeError: 'tuple' object does not support item assignment
 ```
 ### Sets
 - Unordered collection which does not contain duplicate and immutable.
+```python
 >>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 >>> print(basket)                      # show that duplicates have been removed
 {'orange', 'banana', 'pear', 'apple'}
@@ -331,7 +332,6 @@ True
 False
 
 >>> # Demonstrate set operations on unique letters from two words
-```python
 >>> a = set('abracadabra')
 >>> b = set('alacazam')
 >>> a                                  # unique letters in a

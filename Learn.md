@@ -418,7 +418,7 @@ What is your favorite color?  It is blue.
 1
 ```
 
-### Modules and Packages
+### 5. Modules and Packages
 - import module - the module name is added to the importing module
 - from module import fn - the individual functions are added to the symbol table.
 - If the file is executed as a script the __name__ is set to __main__.
@@ -432,4 +432,81 @@ if __name__ == "__main__":
 - __init__.py contains the names of the directories in the package.
 - import \* from package , __all__ can be specified listing submodules to be imported.
 
+### 6. Input and Output
 
+#### Formatted string literals
+- Formatted string literals (also called f-strings for short) let you include the value of Python expressions inside a string by prefixing the string with f or F and writing expressions as {expression}.
+
+```python
+>>> import math
+>>> print(f'The value of pi is approximately {math.pi:.3f}.')
+The value of pi is approximately 3.142.
+```
+- Other modifiers can be used to convert the value before it is formatted. '!a' applies ascii(), '!s' applies str(), and '!r' applies repr().
+
+#### string format()
+```python
+>>> print('We are the {} who say "{}!"'.format('knights', 'Ni'))
+We are the knights who say "Ni!"
+
+>>> print('This {food} is {adjective}.'.format(
+...       food='spam', adjective='absolutely horrible'))
+This spam is absolutely horrible.
+
+print(repr(x).rjust(2), repr(x*x).rjust(3), end=' ')
+```
+
+#### Old style formatting
+```python
+>>> import math
+>>> print('The value of pi is approximately %5.3f.' % math.pi)
+The value of pi is approximately 3.142.
+```
+
+#### Files
+- open() returns a file object, and is most commonly used with two arguments: open(filename, mode).
+- It is good practice to use the with keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Using with is also much shorter than writing equivalent try-finally blocks:
+```python
+>>> with open('workfile') as f:
+...     read_data = f.read()
+
+>>> # We can check that the file has been automatically closed.
+>>> f.closed
+True
+```
+
+#### File methods
+- f.read()
+- f.readline()
+- For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code:
+```python
+>>> for line in f:
+...     print(line, end='')
+...
+This is the first line of the file.
+Second line of the file
+```
+- If you want to read all the lines of a file in a list you can also use list(f) or f.readlines().
+- f.write()
+- f.tell() - returns the current position.
+- f.seek(offset, whence) 
+> whence:
+> 0 : start
+> 1 : current file pos
+> 2 : end file pos
+
+#### Json
+- If you have an object x, you can view its JSON string representation with a simple line of code:
+```python
+>>> import json
+>>> json.dumps([1, 'simple', 'list'])
+'[1, "simple", "list"]'
+```
+- Another variant of the dumps() function, called dump(), simply serializes the object to a text file. So if f is a text file object opened for writing, we can do this:
+```python
+json.dump(x, f)
+```
+- To decode the object again, if f is a text file object which has been opened for reading:
+```python
+json.load(f)
+```

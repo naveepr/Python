@@ -321,7 +321,8 @@ TypeError: 'tuple' object does not support item assignment
 ('hello',)
 ```
 ### Sets
-- Unordered collection which does not contain duplicate and immutable.
+- Unordered collection which does not contain duplicate and immutable. 
+- Existing items cannot be changed.
 ```python
 >>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 >>> print(basket)                      # show that duplicates have been removed
@@ -416,3 +417,19 @@ What is your favorite color?  It is blue.
 3
 1
 ```
+
+### Modules and Packages
+- import module - the module name is added to the importing module
+- from module import fn - the individual functions are added to the symbol table.
+- If the file is executed as a script the __name__ is set to __main__.
+```python
+if __name__ == "__main__":
+    import sys
+    fib(int(sys.argv[1]))
+```
+- dir is used to determine the functions that the module defines.
+- Packages use similar convention as modules for importing things.
+- __init__.py contains the names of the directories in the package.
+- import \* from package , __all__ can be specified listing submodules to be imported.
+
+

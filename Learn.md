@@ -510,3 +510,46 @@ json.dump(x, f)
 ```python
 json.load(f)
 ```
+
+### 7. Exceptions
+```python
+>>> while True:
+...     try:
+...         x = int(input("Please enter a number: "))
+...         break
+...     except ValueError:
+...         print("Oops!  That was no valid number.  Try again...")
+...
+```
+
+### 8. Classes
+```python
+class ClassName:
+    <statement-1>
+```
+
+- global keyword to access the global namespace
+- non-local keyword to get the enclosing namespace
+- __init__ method is called by the class initializer
+```python
+def __init__(self):
+    self.data = []
+ ```
+ - Class have instance objects and method objects.
+ - class variables are shared by all objects.
+ - Inheritance: 
+ ```python
+ class DerivedClassName(BaseClassName):
+    <statement-1>
+ ```
+ - to make private variable prefix them with underscore
+```python
+class DerivedClassName(Base1, Base2, Base3):
+    <statement-1> 
+```
+- to make a struct in c
+```python
+class Employee:
+    pass
+john = Employee()  # Create an empty employee record
+```

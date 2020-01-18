@@ -611,3 +611,22 @@ class Employee:
     pass
 john = Employee()  # Create an empty employee record
 ```
+
+### Useful methods
+
+- startswith
+- endswith
+- isX
+- istitle
+- join
+- split
+- in 
+- not
+- rjust
+- ljust
+- center
+- strip
+- lstrip
+- rstrip
+- pyperclip
+

@@ -612,8 +612,7 @@ class Employee:
 john = Employee()  # Create an empty employee record
 ```
 
-### Useful methods
-
+### String methods
 - startswith
 - endswith
 - isX
@@ -629,4 +628,85 @@ john = Employee()  # Create an empty employee record
 - lstrip
 - rstrip
 - pyperclip
+> import pyperclip
+> pyperclip.copy
+> pyperclip.paste
+- get.items('cat',0)
+- setdefault('cat',0)
+- import pprint 
+> pprint.pprint(str)
+- """ Multiline comments """
+
+### Regular Expressions
+- \d digit
+- \d{3}
+- import re
+- exp=re.compile(\d\d\d)
+- mo = exp.search("string to which it is searched")
+- mo.group()--> mo.group(0)
+- area, number = mo.groups()
+- ? (ab)? 0 or 1 of ab
+- * 0 or more of ab
+- + means 1 or more
+- specific repetition can be matched with the curly braces.
+> (r'(ab){3,}'
+>
+> (r'(ab){,5}'
+>
+> nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
+- findall() 
+1. when called on a regex with no groups, ll return the list
+2. when called on a regex with groups, ll return a list of tuples.
+- notations
+> \d - digit from 0 to 9
+>
+> \D - digit not 0 to 9
+>
+> \w - Any letter, numeric digit, or the underscore character
+>
+> \W
+>
+> \s - Any space, tab, or newline character. 
+>
+> \S
+>
+> [0-5] matching 0 to 5.
+
+- character class r'[aeiou]'
+- character class r'[^aeiou]'
+- . match just 1 character
+
+#### This chapter covered a lot of notation, so here’s a quick review of what you learned:
+
+   The ? matches zero or one of the preceding group.
+
+   The * matches zero or more of the preceding group.
+
+   The + matches one or more of the preceding group.
+
+   The {n} matches exactly n of the preceding group.
+
+   The {n,} matches n or more of the preceding group.
+
+   The {,m} matches 0 to m of the preceding group.
+
+   The {n,m} matches at least n and at most m of the preceding group.
+
+   {n,m}? or *? or +? performs a nongreedy match of the preceding group.
+
+   ^spam means the string must begin with spam.
+
+   spam$ means the string must end with spam.
+
+   The . matches any character, except newline characters.
+
+   \d, \w, and \s match a digit, word, or space character, respectively.
+
+   \D, \W, and \S match anything except a digit, word, or space character, respectively.
+
+   [abc] matches any character between the brackets (such as a, b, or c).
+
+   [^abc] matches any character that isn’t between the brackets.
+### Files
+
 

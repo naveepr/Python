@@ -709,7 +709,7 @@ john = Employee()  # Create an empty employee record
 > exists
 > isfile
 > isdir
-> open
-> read
-> readlines
-> write
+- open
+- read
+- readlines
+- write
